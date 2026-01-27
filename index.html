@@ -63,7 +63,7 @@
             content: "";
             position: absolute;
             inset: 0;
-            background: rgba(20, 20, 20, 0.55); /* 半透明深灰遮罩 */
+            background: rgba(40, 40, 0, 6); /* 半透明深灰遮罩 */
         }
 
         .hero-content {
@@ -102,6 +102,13 @@
             border-radius: 4px;
             font-size: 18px;
             letter-spacing: 0.5px;
+            transition: all 0.3s ease;
+        }
+        
+        .hero a:hover {
+            background: #0088cc; /* 深一点的蓝色 */
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            transform: translateY(-2px);
         }
 
         /* Section Base Style */
@@ -275,5 +282,6 @@
 
 </body>
 </html>
+
 
 
