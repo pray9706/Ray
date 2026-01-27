@@ -44,17 +44,28 @@
         }
 
         /* Hero Section */
-        .hero {
-            height: 100vh;
-            background: url("https://images.unsplash.com/photo-1518770660439-4636190af475") center/cover no-repeat;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            color: white;
-            text-shadow: 0 0 10px rgba(0,0,0,0.6);
-            padding: 0 20px;
-        }
+       .hero {
+                position: relative;
+                height: 100vh;
+                background: url("你的图片地址") center/cover no-repeat;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                color: white;
+                text-shadow: 0 0 10px rgba(0,0,0,0.6);
+                padding: 0 20px;
+            }
+            
+            .hero::before {
+                content: "";
+                position: absolute;
+                inset: 0;
+                background: rgba(50, 50, 50, 0.5); /* 灰色半透明层 */
+            }
+            
+            .hero > * {
+                position: relative; /* 确保文字在遮罩层上面 */
+            }
 
         .hero h1 {
             font-size: 60px;
@@ -233,4 +244,5 @@
 
 </body>
 </html>
+
 
