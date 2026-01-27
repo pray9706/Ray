@@ -1,1 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rui Pan | IT Network Administration</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f5f5f5;
+            scroll-behavior: smooth;
+        }
+
+        /* Navigation Bar */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: #1a1a1a;
+            padding: 15px 0;
+            z-index: 1000;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        nav ul li a:hover {
+            color: #00aaff;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            background: url("https://images.unsplash.com/photo-1518770660439-4636190af475") center/cover no-repeat;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-shadow: 0 0 10px rgba(0,0,0,0.6);
+            padding: 0 20px;
+        }
+
+        .hero h1 {
+            font-size: 60px;
+            margin: 0;
+        }
+
+        .hero h2 {
+            font-size: 26px;
+            margin-top: 10px;
+        }
+
+        .hero p {
+            font-size: 20px;
+            max-width: 700px;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .hero a {
+            margin-top: 30px;
+            padding: 12px 25px;
+            background: #00aaff;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 18px;
+        }
+
+        /* Section Style */
+        section {
+            max-width: 900px;
+            margin: 80px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        section h2 {
+            margin-top: 0;
+            color: #333;
+        }
+
+        .skills-grid, .achievements-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+        }
+
+        .card {
+            background: #f0f8ff;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 5px solid #00aaff;
+        }
+
+        .experience-item {
+            margin-bottom: 25px;
+        }
+
+        .contact-box {
+            text-align: center;
+            font-size: 18px;
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- Navigation -->
+<nav>
+    <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#achievements">Achievements</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+</nav>
+
+<!-- Hero Section -->
+<div class="hero" id="home">
+    <h1>RUI PAN</h1>
+    <h2>IT Network Administration @ NBCC</h2>
+    <p>12+ years of IT product experience, now building strong hands-on skills in networking and system administration.</p>
+    <a href="#about">Explore My Portfolio</a>
+</div>
+
+<!-- About Section -->
+<section id="about">
+    <h2>About Me</h2>
+    <p>
+        I am currently studying IT Network Administration at New Brunswick Community College.
+        With over 12 years of IT product management experience in China, I bring strong analytical,
+        communication, and problem-solving skills. I am seeking part-time or summer full-time IT support
+        opportunities to apply and strengthen my hands-on technical abilities.
+    </p>
+</section>
+
+<!-- Skills Section -->
+<section id="skills">
+    <h2>Skills</h2>
+    <div class="skills-grid">
+        <div class="card">Product Management: Requirements, Market Research, Roadmapping</div>
+        <div class="card">Software Development: Java, SQL, ERP/PM/GS Systems</div>
+        <div class="card">Cloud & Virtualization: Desktop Cloud, VMs, Cloud Support</div>
+        <div class="card">Leadership & Collaboration: Teamwork, Communication</div>
+    </div>
+</section>
+
+<!-- Experience Section -->
+<section id="experience">
+    <h2>Professional Experience</h2>
+
+    <div class="experience-item">
+        <h3>Ruijie Network Co. Ltd (2018–2024) – Product Manager</h3>
+        <ul>
+            <li>Led customer demand research and market development for cloud desktop products.</li>
+            <li>Developed annual industry strategies and competitive solutions.</li>
+            <li>Analyzed customer needs and industry trends across multiple regions.</li>
+        </ul>
+    </div>
+
+    <div class="experience-item">
+        <h3>OS-EASY Group (2013–2018) – Product Manager</h3>
+        <ul>
+            <li>Managed desktop cloud products from prototype to launch.</li>
+            <li>Prepared bidding documents and product specifications.</li>
+            <li>Supported major higher education cloud deployments.</li>
+        </ul>
+    </div>
+
+    <div class="experience-item">
+        <h3>Early Career (2001–2013)</h3>
+        <ul>
+            <li>Web editing, graphic design, Java programming.</li>
+            <li>Telecom equipment installation and system deployment.</li>
+            <li>ERP project management and customer communication.</li>
+        </ul>
+    </div>
+</section>
+
+<!-- Education Section -->
+<section id="education">
+    <h2>Education</h2>
+    <ul>
+        <li>NBCC – IT Network Administration (2025–Present)</li>
+        <li>Diploma in Software Engineering – Hubei Software Industry Training Centre (2006)</li>
+        <li>Diploma in Communication Technology – HUST (2004)</li>
+        <li>Diploma in Telecommunications – Hubei Post & Telecom School (2001)</li>
+    </ul>
+</section>
+
+<!-- Achievements Section -->
+<section id="achievements">
+    <h2>Achievements</h2>
+    <div class="achievements-grid">
+        <div class="card">Managed 3 product groups contributing 60% of cloud desktop revenue</div>
+        <div class="card">Won company-level professional award</div>
+        <div class="card">Led region to #1 in revenue for 2 consecutive years</div>
+        <div class="card">Launched major desktop cloud products</div>
+    </div>
+</section>
+
+<!-- Contact Section -->
+<section id="contact">
+    <h2>Contact</h2>
+    <div class="contact-box">
+        <p>Email: <strong>panrui9706@gmail.com</strong></p>
+        <p>Phone: <strong>+1 (204) 399 6550</strong></p>
+        <p>LinkedIn / GitHub（你之后可以加链接）</p>
+    </div>
+</section>
+
+</body>
+</html>
 
