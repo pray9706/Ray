@@ -10,33 +10,37 @@
             margin: 0;
             font-family: Arial, sans-serif;
             background: #f5f5f5;
+            color: #222;
+            line-height: 1.6;
             scroll-behavior: smooth;
         }
 
-        /* Navigation Bar */
+        /* Navigation */
         nav {
             position: fixed;
             top: 0;
             width: 100%;
-            background: #1a1a1a;
+            background: rgba(10, 10, 10, 0.9);
             padding: 15px 0;
             z-index: 1000;
+            backdrop-filter: blur(6px);
         }
 
         nav ul {
             list-style: none;
             display: flex;
             justify-content: center;
-            gap: 30px;
+            gap: 40px;
             margin: 0;
             padding: 0;
         }
 
         nav ul li a {
-            color: white;
+            color: #fff;
             text-decoration: none;
-            font-size: 16px;
+            font-size: 15px;
             font-weight: bold;
+            letter-spacing: 0.5px;
         }
 
         nav ul li a:hover {
@@ -44,92 +48,115 @@
         }
 
         /* Hero Section */
-       .hero {
-                position: relative;
-                height: 100vh;
-                background: url("image/Banner-1.png") center/cover no-repeat;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                color: white;
-                text-shadow: 0 0 10px rgba(0,0,0,0.6);
-                padding: 0 20px;
-            }
-            
-            .hero::before {
-                content: "";
-                position: absolute;
-                inset: 0;
-                background: rgba(50, 50, 50, 0.5); /* 灰色半透明层 */
-            }
-            
-            .hero > * {
-                position: relative; /* 确保文字在遮罩层上面 */
-            }
+        .hero {
+            height: 100vh;
+            background: url("image/banner-1.png") center/cover no-repeat;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 20px;
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: rgba(20, 20, 20, 0.55); /* 半透明深灰遮罩 */
+        }
+
+        .hero-content {
+            position: relative;
+            color: white;
+            max-width: 800px;
+        }
 
         .hero h1 {
-            font-size: 60px;
+            font-size: 70px;
             margin: 0;
+            font-weight: bold;
+            letter-spacing: 2px;
         }
 
         .hero h2 {
             font-size: 26px;
-            margin-top: 10px;
+            margin-top: 15px;
+            font-weight: normal;
+            opacity: 0.9;
         }
 
         .hero p {
             font-size: 20px;
-            max-width: 700px;
-            text-align: center;
-            margin-top: 20px;
+            margin-top: 25px;
+            opacity: 0.9;
         }
 
         .hero a {
-            margin-top: 30px;
-            padding: 12px 25px;
+            margin-top: 35px;
+            display: inline-block;
+            padding: 12px 28px;
             background: #00aaff;
             color: white;
             text-decoration: none;
-            border-radius: 5px;
+            border-radius: 4px;
             font-size: 18px;
+            letter-spacing: 0.5px;
         }
 
-        /* Section Style */
+        /* Section Base Style */
         section {
             max-width: 900px;
-            margin: 80px auto;
-            padding: 20px;
+            margin: 100px auto;
+            padding: 40px;
             background: white;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            border-radius: 12px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.08);
         }
 
         section h2 {
             margin-top: 0;
+            font-size: 32px;
             color: #333;
+            border-left: 6px solid #00aaff;
+            padding-left: 12px;
         }
 
-        .skills-grid, .achievements-grid {
+        /* Skills Grid */
+        .skills-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 15px;
+            gap: 20px;
+            margin-top: 20px;
         }
 
-        .card {
-            background: #f0f8ff;
-            padding: 15px;
+        .skill-card {
+            background: #eef8ff;
+            padding: 18px;
             border-radius: 8px;
             border-left: 5px solid #00aaff;
         }
 
+        /* Experience */
         .experience-item {
-            margin-bottom: 25px;
+            margin-bottom: 35px;
         }
 
+        .experience-item h3 {
+            margin-bottom: 10px;
+            color: #222;
+        }
+
+        /* Contact */
         .contact-box {
             text-align: center;
             font-size: 18px;
         }
+
+        .contact-box p {
+            margin: 10px 0;
+        }
+
     </style>
 </head>
 
@@ -150,10 +177,12 @@
 
 <!-- Hero Section -->
 <div class="hero" id="home">
-    <h1>RUI PAN</h1>
-    <h2>IT Network Administration @ NBCC</h2>
-    <p>12+ years of IT product experience, now building strong hands-on skills in networking and system administration.</p>
-    <a href="#about">Explore My Portfolio</a>
+    <div class="hero-content">
+        <h1>RUI PAN</h1>
+        <h2>IT Network Administration @ NBCC</h2>
+        <p>12+ years of IT product experience, now building strong hands-on skills in networking, cloud, and IT support.</p>
+        <a href="#about">Explore My Portfolio</a>
+    </div>
 </div>
 
 <!-- About Section -->
@@ -171,10 +200,12 @@
 <section id="skills">
     <h2>Skills</h2>
     <div class="skills-grid">
-        <div class="card">Product Management: Requirements, Market Research, Roadmapping</div>
-        <div class="card">Software Development: Java, SQL, ERP/PM/GS Systems</div>
-        <div class="card">Cloud & Virtualization: Desktop Cloud, VMs, Cloud Support</div>
-        <div class="card">Leadership & Collaboration: Teamwork, Communication</div>
+        <div class="skill-card">Networking Fundamentals</div>
+        <div class="skill-card">Cloud & Virtualization</div>
+        <div class="skill-card">Troubleshooting & IT Support</div>
+        <div class="skill-card">Product Management & Analysis</div>
+        <div class="skill-card">Java, SQL, ERP/PM/GS Systems</div>
+        <div class="skill-card">Communication & Collaboration</div>
     </div>
 </section>
 
@@ -224,12 +255,12 @@
 <!-- Achievements Section -->
 <section id="achievements">
     <h2>Achievements</h2>
-    <div class="achievements-grid">
-        <div class="card">Managed 3 product groups contributing 60% of cloud desktop revenue</div>
-        <div class="card">Won company-level professional award</div>
-        <div class="card">Led region to #1 in revenue for 2 consecutive years</div>
-        <div class="card">Launched major desktop cloud products</div>
-    </div>
+    <ul>
+        <li>Managed 3 product groups contributing 60% of cloud desktop revenue</li>
+        <li>Won company-level professional award</li>
+        <li>Led region to #1 in revenue for 2 consecutive years</li>
+        <li>Launched major desktop cloud products</li>
+    </ul>
 </section>
 
 <!-- Contact Section -->
@@ -244,7 +275,3 @@
 
 </body>
 </html>
-
-
-
-
