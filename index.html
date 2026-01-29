@@ -49,85 +49,94 @@
 
         /* Hero Section */
         .hero {
-            height: 100vh;
-            background: url("image/Picture1-2.png") center/cover no-repeat;
-            position: relative;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 0 20px;
-        }
-
-        .hero::before {
-            content: "";
-            position: absolute;
-            inset: 0;
-            background: rgba(40, 40, 40, 0.6); /* 半透明深灰遮罩 */
-        }
-
-        .hero-content {
-            position: relative;
-            color: white;
-            max-width: 800px;
-        }
-
-        .hero h1 {
-            font-size: 70px;
-            margin: 0;
-            font-weight: bold;
-            letter-spacing: 2px;
-        }
-
-        .hero h2 {
-            font-size: 26px;
-            margin-top: 15px;
-            font-weight: normal;
-            opacity: 0.9;
-        }
-
-        .hero p {
-            font-size: 20px;
-            margin-top: 25px;
-            opacity: 0.9;
-        }
-
-        .hero a {
-            margin-top: 35px;
-            display: inline-block;
-            padding: 12px 28px;
-            background: #00aaff;
-            color: white;
-            text-decoration: none;
-            border-radius: 4px;
-            font-size: 18px;
-            letter-spacing: 0.5px;
-            transition: all 0.3s ease;
-        }
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                padding: 80px 40px;
+                background-color: #f0f4f8;
+                background-image: none;
+                height: auto;
+                gap: 40px;
+            }
+            
+            /* 左侧图片区域 */
+            .hero-image {
+                flex: 1;
+            }
+            
+            .hero-image img {
+                width: 100%;
+                height: auto;
+                border-radius: 8px;
+                object-fit: cover;
+                display: block;
+            }
+            
+            /* 右侧文字区域 */
+            .hero-content {
+                flex: 1;
+                text-align: left;
+                color: #222;
+            }
+            
+            /* 姓名：最大字号 */
+            .hero-content h1 {
+                font-size: 2.8rem;
+                font-weight: bold;
+                margin-bottom: 0.5rem;
+            }
+            
+            /* 专业和学校：中字号 */
+            .hero-content h2 {
+                font-size: 1.4rem;
+                font-weight: 500;
+                margin-bottom: 1rem;
+            }
+            
+            /* 详细介绍：最小字号，左对齐 */
+            .hero-content p {
+                font-size: 1rem;
+                line-height: 1.6;
+                margin-bottom: 1.8rem;
+                text-align: left;
+            }
+            
+            /* 按钮：只有边框，悬停变深蓝 */
+            .hero-content a {
+                display: inline-block;
+                padding: 10px 24px;
+                font-size: 1rem;
+                border: 2px solid #1f4b8f;
+                background-color: transparent;
+                color: #1f4b8f;
+                text-decoration: none;
+                border-radius: 4px;
+                transition: all 0.3s ease;
+            }
+            
+            .hero-content a:hover {
+                background-color: #1f4b8f;
+                color: #fff;
+            }
         
-        .hero a:hover {
-            background: #0088cc; /* 深一点的蓝色 */
-            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-            transform: translateY(-2px);
-        }
-
-        /* Section Base Style */
-        section {
-            max-width: 900px;
-            margin: 100px auto;
-            padding: 40px;
-            background: white;
-            border-radius: 12px;
-            box-shadow: 0 0 20px rgba(0,0,0,0.08);
-        }
-
-        section h2 {
-            margin-top: 0;
-            font-size: 32px;
-            color: #333;
-            border-left: 6px solid #00aaff;
-            padding-left: 12px;
-        }
+        
+                /* Section Base Style */
+                section {
+                    max-width: 900px;
+                    margin: 100px auto;
+                    padding: 40px;
+                    background: white;
+                    border-radius: 12px;
+                    box-shadow: 0 0 20px rgba(0,0,0,0.08);
+                }
+        
+                section h2 {
+                    margin-top: 0;
+                    font-size: 32px;
+                    color: #333;
+                    border-left: 6px solid #00aaff;
+                    padding-left: 12px;
+                }
 
         /* Skills Grid */
         .skills-grid {
@@ -184,6 +193,9 @@
 
 <!-- Hero Section -->
 <div class="hero" id="home">
+    <div class="hero-image">
+        <img src="image/Picture1-2.png" alt="Banner Image">
+    </div>
     <div class="hero-content">
         <h1>RUI PAN</h1>
         <h2>IT Network Administration @ NBCC</h2>
@@ -282,6 +294,7 @@
 
 </body>
 </html>
+
 
 
 
