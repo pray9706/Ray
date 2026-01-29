@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rui Pan | IT Network Administration</title>
+ <style>
+    body {
+    background-color: #f7f6f3;
+	}
+	/* 顶部导航栏整体 */
+	.top-nav {
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		padding: 20px 40px;
+		background: #ffffff;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		box-sizing: border-box;
+		z-index: 1000;
+		border-bottom: 1px solid #eee;
+	}
+
+	/* 左侧区域：图标 + 文字 */
+	.nav-left {
+		display: flex;
+		align-items: center;
+		gap: 12px;
+	}
+
+	/* 黄色圆形图标 */
+	.nav-icon {
+		width: 16px;
+		height: 16px;
+		background-color: #f4c542;
+		border-radius: 50%;
+	}
+
+	/* 姓名 + 职位在同一行 */
+	.nav-text {
+		font-size: 16px;
+		font-weight: bold;
+		color: #222;
+	}
+
+	.nav-role {
+		font-weight: normal;
+		color: #666;
+		margin-left: 6px;
+	}
+
+	/* 右侧菜单项 */
+	.nav-right {
+		list-style: none;
+		display: flex;
+		align-items: center;
+		gap: 0;
+		margin: 0;
+		padding: 0;
+	}
+
+	.nav-right li {
+		position: relative;
+		padding: 0 18px;
+	}
+
+	.nav-right li:not(:last-child)::after {
+		content: "";
+		position: absolute;
+		right: 0;
+		top: 50%;
+		transform: translateY(-50%);
+		height: 16px;
+		width: 1px;
+		background-color: #ccc;
+	}
+
+	.nav-right li a {
+		text-decoration: none;
+		font-size: 15px;
+		font-weight: bold;
+		color: #222;
+		letter-spacing: 0.5px;
+	}
+
+	.nav-right li a:hover {
+		color: #1f4b8f;
+	}
+	
+	
+	
+	/* 主体区域整体布局 */
+	.main-section {
+	  display: flex;
+	  align-items: center;
+	  justify-content: center;
+	  padding: 120px 60px 80px;
+	  gap: 60px;
+	  background-color: #f7f6f3; /* 页面背景色 */
+	}
+
+	/* 左侧圆形图片 */
+	.main-left img {
+	  width: 350px;
+	  height: 350px;
+	  border-radius: 50%;
+	  object-fit: cover;
+	  box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+	}
+
+	/* 右侧文字区域 */
+	.main-right {
+	  max-width: 520px;
+	  text-align: left;
+	}
+
+	/* 姓名：最大字号 */
+	.main-name {
+	  font-size: 2.8rem;
+	  font-weight: bold;
+	  margin-bottom: 0.6rem;
+	  color: #222;
+	}
+
+	/* 副标题：中字号 */
+	.main-subtitle {
+	  font-size: 1.4rem;
+	  font-weight: 500;
+	  margin-bottom: 1rem;
+	  color: #444;
+	}
+
+	/* 详细介绍：最小字号 */
+	.main-description {
+	  font-size: 1rem;
+	  line-height: 1.7;
+	  color: #555;
+	  margin-bottom: 2rem;
+	}
+
+	/* 圆形按钮区域 */
+	.main-buttons {
+	  display: flex;
+	  gap: 20px;
+	}
+
+	/* 通用圆形按钮样式 */
+	.circle-btn {
+	  width: 120px;
+	  height: 120px;
+	  border-radius: 50%;
+	  display: flex;
+	  align-items: center;
+	  justify-content: center;
+	  font-size: 1.2rem;
+	  font-weight: bold;
+	  text-decoration: none;
+	  color: #fff;
+	  transition: all 0.3s ease;
+	  border: 2px solid transparent;
+	}
+
+	/* 原始颜色 */
+	.circle-btn.yellow {
+	  background-color: #f4c542;
+	}
+
+	.circle-btn.red {
+	  background-color: #d94f4f;
+	}
+
+	.circle-btn.blue {
+	  background-color: #6ac3e2;
+	}
+
+	/* 悬停时：背景透明，文字保留，边框显示 */
+	.circle-btn:hover {
+	  background-color: transparent;
+	  color: inherit;
+	  border-color: currentColor;
+	}
+
+
+
+	/* 分隔线 */
+	.footer-divider {
+	  border: none;
+	  border-top: 1px solid #ccc;
+	  margin: 60px auto 30px;
+	  width: 90%;
+	}
+
+	/* Footer整体布局 */
+	.footer {
+	  display: grid;
+	  grid-template-columns: repeat(3, 1fr);
+	  gap: 20px;
+	  padding: 20px 100px;
+	  background-color: #f7f6f3;
+	  font-size: 0.95rem;
+	  color: #444;
+	  align-items: center;
+	}
+
+	/* 每个部分 */
+	.footer-item {
+	  text-align: left;
+	}
+
+	/* 社交图标链接 */
+	.social-icon {
+	  display: inline-block;
+	  margin-left: 10px;
+	}
+
+	.icon-img {
+	  width: 24px;
+	  height: 24px;
+	  vertical-align: middle;
+	  transition: opacity 0.3s ease;
+	}
+
+	.icon-img:hover {
+	  opacity: 0.6;
+	}
+
+
+</style>
+</head>
+
+
+
+<body class="body">
+
+<nav class="top-nav" class="body">
+    <div class="nav-left">
+        <div class="nav-icon"></div>
+        <div class="nav-text">Rui Pan <span class="nav-role">| IT Support</span></div>
+    </div>
+
+    <ul class="nav-right">
+        <li><a href="#resume">Resume</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#contact">About</a></li>
+    </ul>
+</nav>
+
+
+<div class="main-section">
+  <div class="main-left">
+    <img src="image/Ray-1.jpg" alt="Rui Pan Photo">
+  </div>
+
+  <div class="main-right">
+    <h1 class="main-name">Ray Pan</h1>
+    <h2 class="main-subtitle">A Bit About Me</h2>
+    <p class="main-description">
+      I'm studying IT Network Administration at NBCC, building hands-on skills in networking, cloud, and IT support.  
+      With 12+ years of IT product experience, I'm now seeking part-time or summer full-time IT support opportunities to apply and grow my technical abilities.
+    </p>
+
+    <div class="main-buttons">
+      <a href="#resume" class="circle-btn yellow">Resume</a>
+      <a href="#experience" class="circle-btn red">Experience</a>
+      <a href="#contact" class="circle-btn blue">Skills</a>
+    </div>
+  </div>
+</div>
+
+
+<!-- 分隔线 -->
+<hr class="footer-divider">
+<!-- Footer Section -->
+<footer class="footer">
+  <div class="footer-item"><strong>Phone:</strong> 204-399-xxxx</div>
+  <div class="footer-item"><strong>Email:</strong> panrui9706@gmail.com></div>
+  <div class="footer-item">
+    <strong>Follow Me:</strong>
+    <a href="https://www.linkedin.com/in/rui-pan-07a63633b/" class="social-icon" target="_blank">
+      <img src="image/LinkedIn_icon.png" alt="LinkedIn" class="icon-img">
+    </a>
+    <a href="https://www.facebook.com/profile.php?id=61572253116786" class="social-icon" target="_blank">
+      <img src="image/Facebook-icon.jpg" alt="Facebook" class="icon-img">
+    </a>
+  </div>
+</footer>
+
+
+</body>
+
+</html>
