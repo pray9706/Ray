@@ -110,6 +110,31 @@
 	  object-fit: cover;
 	  box-shadow: 0 8px 24px rgba(0,0,0,0.15);
 	}
+	.image-carousel {
+	  position: relative;
+	  width: 350px;
+	  height: 350px;
+	  border-radius: 50%;
+	  overflow: hidden;
+	  box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+	}
+
+	.carousel-img {
+	  position: absolute;
+	  top: 0;
+	  left: 0;
+	  width: 100%;
+	  height: 100%;
+	  object-fit: cover;
+	  border-radius: 50%;
+	  opacity: 0;
+	  transition: opacity 1s ease;
+	}
+
+	.carousel-img.active {
+	  opacity: 1;
+	  z-index: 1;
+	}
 
 	/* 右侧文字区域 */
 	.main-right {
@@ -243,17 +268,22 @@
 
     <ul class="nav-right">
         <li><a href="resume.html">Resume</a></li>
-        <li><a href="experience.html">Experience</a></li>
-        <li><a href="skills.html">Skills</a></li>
-        <li><a href="contact.html">About</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#contact">About</a></li>
     </ul>
 </nav>
 
 
 <div class="main-section">
   <div class="main-left">
-    <img src="image/Ray-1.jpg" alt="Rui Pan Photo">
-  </div>
+	  <div class="image-carousel">
+		<img src="image/Ray-1.jpg" class="carousel-img active" alt="Photo 1">
+		<img src="image/Ray-2.jpg" class="carousel-img" alt="Photo 2">
+		<img src="image/Ray-3.jpeg" class="carousel-img" alt="Photo 3">
+	  </div>
+</div>
+
 
   <div class="main-right">
     <h1 class="main-name">Ray Pan</h1>
@@ -289,8 +319,17 @@
   </div>
 </footer>
 
+	<script>
+	let currentIndex = 0;
+	const images = document.querySelectorAll('.carousel-img');
+
+	setInterval(() => {
+	  images[currentIndex].classList.remove('active');
+	  currentIndex = (currentIndex + 1) % images.length;
+	  images[currentIndex].classList.add('active');
+	}, 4000);
+	</script>
 
 </body>
 
 </html>
-
