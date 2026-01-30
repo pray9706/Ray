@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Experience | Rui Pan</title>
+
+<style>
+    body {
+        background-color: #f7f6f3;
+        margin: 0;
+        font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+    }
+
+    /* ---------------- HEADER ---------------- */
+    .top-nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        padding: 20px 40px;
+        background: #ffffff;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        box-sizing: border-box;
+        z-index: 1000;
+        border-bottom: 1px solid #eee;
+    }
+
+    .nav-left {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+    }
+
+    .nav-icon {
+        width: 16px;
+        height: 16px;
+        background-color: #f4c542;
+        border-radius: 50%;
+    }
+
+    .nav-text {
+        font-size: 16px;
+        font-weight: bold;
+        color: #222;
+    }
+
+    .nav-role {
+        font-weight: normal;
+        color: #666;
+        margin-left: 6px;
+    }
+
+    .nav-right {
+        list-style: none;
+        display: flex;
+        align-items: center;
+        gap: 0;
+        margin: 0;
+        padding: 0;
+    }
+
+    .nav-right li {
+        position: relative;
+        padding: 0 18px;
+    }
+
+    .nav-right li:not(:last-child)::after {
+        content: "";
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        height: 16px;
+        width: 1px;
+        background-color: #ccc;
+    }
+
+    .nav-right li a {
+        text-decoration: none;
+        font-size: 15px;
+        font-weight: bold;
+        color: #222;
+    }
+
+    .nav-right li a.active {
+        color: #1f4b8f;
+    }
+
+    /* ---------------- MAIN CONTAINER ---------------- */
+    .resume-container {
+        padding: 40px 60px 30px;
+        max-width: 900px;
+        margin: auto;
+        line-height: 1.7;
+        color: #333;
+        margin-top: 40px;
+    }
+
+    .resume-title {
+        font-size: 2.2rem;
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+
+    /* ---------------- CARD ---------------- */
+    .card {
+        background: #ffffff;
+        padding: 25px 30px;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        margin-top: 30px;
+    }
+
+    /* ---------------- TABS ---------------- */
+    .tab-buttons {
+        display: flex;
+        gap: 12px;
+        margin-bottom: 25px;
+    }
+
+    .tab-button {
+        padding: 12px 22px;
+        background: #f0f2f5;
+        border-radius: 10px;
+        cursor: pointer;
+        font-weight: bold;
+        color: #555;
+        border: 1px solid #ddd;
+        transition: all 0.25s ease;
+    }
+
+    .tab-button:hover {
+        background: #e4e8ee;
+    }
+
+    .tab-button.active {
+        background: #1f4b8f;
+        color: #fff;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    }
+
+    .tab-content {
+        display: none;
+        opacity: 0;
+        transform: translateY(10px);
+        transition: all 0.35s ease;
+    }
+
+    .tab-content.active {
+        display: block;
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    /* ---------------- TITLES ---------------- */
+    .exp-title {
+        font-size: 1.7rem;
+        font-weight: bold;
+        color: #1f4b8f;
+        margin-bottom: 10px;
+    }
+
+    .exp-subtitle {
+        font-size: 1.2rem;
+        font-weight: bold;
+        margin-top: 25px;
+        margin-bottom: 10px;
+        color: #333;
+    }
+
+    /* ---------------- IMAGES ---------------- */
+    .exp-img {
+        width: 100%;
+        max-width: 450px;
+        border-radius: 12px;
+        margin: 15px 0;
+        box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+        transition: transform 0.3s ease;
+    }
+
+    .exp-img:hover {
+        transform: scale(1.02);
+    }
+	.small-img {
+		max-width: 400px; /* 原始 650px 的约 2/3 */
+	}
+	
+	.img-row {
+	  display: flex;
+	  gap: 20px; /* 图片之间的间距 */
+	  flex-wrap: wrap; /* 小屏幕自动换行 */
+	  margin: 15px 0;
+	  justify-content: flex-start; /* 可改为 center 或 space-between */
+	}
+    /* ---------------- TIMELINE ---------------- */
+    .timeline {
+        margin-top: 20px;
+        border-left: 3px solid #1f4b8f;
+        padding-left: 20px;
+    }
+
+    .timeline-item {
+        margin-bottom: 20px;
+        position: relative;
+    }
+
+    .timeline-item::before {
+        content: "";
+        width: 14px;
+        height: 14px;
+        background: #1f4b8f;
+        border-radius: 50%;
+        position: absolute;
+        left: -30px;
+        top: 4px;
+    }
+
+    .timeline-year {
+        font-weight: bold;
+        color: #1f4b8f;
+        margin-bottom: 4px;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+    }
+
+    .timeline-icon {
+        font-size: 1.2rem;
+    }
+
+    .timeline-text {
+        color: #444;
+    }
+
+    /* ---------------- FOOTER ---------------- */
+    .footer-divider {
+        border: none;
+        border-top: 1px solid #ccc;
+        margin: 60px auto 30px;
+        width: 90%;
+    }
+
+    .footer {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+        padding: 20px 100px;
+        background-color: #f7f6f3;
+        font-size: 0.95rem;
+        color: #444;
+        align-items: center;
+    }
+
+    .icon-img {
+        width: 24px;
+        height: 24px;
+        vertical-align: middle;
+        transition: opacity 0.3s ease;
+    }
+
+    .icon-img:hover {
+        opacity: 0.6;
+    }
+</style>
+
+</head>
+
+<body>
+
+<!-- ---------------- HEADER ---------------- -->
+<nav class="top-nav">
+    <div class="nav-left">
+        <div class="nav-icon"></div>
+        <div class="nav-text">
+            <a href="index.html" style="text-decoration: none;">Rui Pan</a>
+            <span class="nav-role">| IT Support</span>
+        </div>
+    </div>
+
+    <ul class="nav-right">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="resume.html">Resume</a></li>
+        <li><a class="active" href="experience.html">Experience</a></li>
+        <li><a href="skills.html">Skills</a></li>
+        <li><a href="about.html">About</a></li>
+    </ul>
+</nav>
+
+
+<!-- ---------------- EXPERIENCE CONTENT ---------------- -->
+<div class="resume-container">
+
+    <h1 class="resume-title">Experience</h1>
+
+    <div class="tab-buttons">
+        <div class="tab-button active" onclick="openTab('ruijie')">2018–2024 Ruijie Network</div>
+        <div class="tab-button" onclick="openTab('oseasy')">2013–2018 OS‑Easy Group</div>
+    </div>
+
+    <!-- ---------------- Ruijie ---------------- -->
+    <div id="ruijie" class="tab-content active card">
+
+        <div class="exp-title">Ruijie Network Co. Ltd (2018–2024)</div>
+        <p><strong>Product & Business Development Manager → Supervisor</strong></p>
+
+        <p>
+        Joined Ruijie Networks in 2018 as a Product & Business Development Manager and was later promoted to Supervisor of Product & Business Development. This hybrid role combined market development, product enablement, sales support, and strategic customer engagement—ranging from identifying new market opportunities and shaping sales approaches to maintaining existing market share and supporting key accounts. 
+        </p>
+
+        <p>
+        Over several years, consistently achieved annual business targets independently or by leading a regional team. Recognized with multiple company-level honors, including <strong>“Best Product Manager”</strong> and <strong>First Place in the Professional Skills Competition</strong>. Contributed to the systematic <strong>development of the competency framework for the Product & Business Development Manager role</strong>, helping standardize skills and expectations across the organization.
+        </p>
+		<p>	
+		<em><strong>Note:</strong> Ruijie’s cloud desktop solution has consistently ranked among the top two in market share in China.</em>
+        </p>
+
+        <div class="exp-subtitle">Achievements & Awards</div>
+
+        <div class="timeline">
+
+			<div class="timeline-item">
+				<div class="timeline-year">2018 <span class="timeline-icon">🏆</span><strong>Best Newcomer Award</strong></div>
+				<div class="timeline-text">Best Newcomer Award, recognizing outstanding performance during the first year at the company.</div>
+				<img src="image/2018-1.png" class="exp-img" alt="2018 Best Newcomer Award">
+				<img src="image/2018-2.jpg" class="exp-img" alt="2018 Best Newcomer Award">
+			
+			</div>
+
+			<div class="timeline-item">
+				<div class="timeline-year">2019 <span class="timeline-icon">🚀</span><strong>Outstanding Contribution to Sales Growth in Higher Education</strong></div>
+				<div class="timeline-text">Award for Outstanding Contribution to Sales Growth in the Higher Education Sector, for driving significant market expansion with the cloud desktop solution.</div>
+				<img src="image/2019-1.png" class="exp-img" alt="2019 Sales Growth Award">
+			</div>
+
+			<div class="timeline-item">
+				<div class="timeline-year">2020 <span class="timeline-icon">🎤</span><strong>Product Presenter at Nationwide Launch Event</strong></div>
+				<div class="timeline-text">Product Presenter at the Nationwide Product Launch Event, delivering the official introduction of the new solution.</div>
+					<img src="image/2020-1.jpg" class="exp-img" alt="2020 Product Launch Presentation">
+					<img src="image/2020-2.jpg" class="exp-img" alt="2020 Launch Event Scene">
+			</div>
+
+			<div class="timeline-item">
+				<div class="timeline-year">2021 <span class="timeline-icon">🏆</span><strong>Gold Award / Best Product & Business Development Manager</strong></div>
+				<div class="timeline-text">Gold Award / Best Product & Business Development Manager, acknowledging top performance across the role.</div>
+				<img src="image/2021-1.png" class="exp-img small-img" alt="2021 Gold Award Certificate">
+			</div>
+
+			<div class="timeline-item">
+				<div class="timeline-year">2022 <span class="timeline-icon">🏆</span><strong>Gold Award in Skills Competition</strong></div>
+				<div class="timeline-text">Gold Award in the Product & Business Development Manager Skills Competition, ranking first in the company-wide professional contest.</div>
+				<img src="image/2022-1.png" class="exp-img" alt="2022 Skills Competition Trophy">
+				
+			</div>
+
+		</div>
+    </div>
+
+
+    <!-- ---------------- OS-EASY ---------------- -->
+    <div id="oseasy" class="tab-content card">
+
+        <div class="exp-title">OS‑Easy Group Holding Ltd. (2013–2018)</div>
+        <p><strong>Product Manager</strong></p>
+
+        <p>
+        Served as the first Product Manager for OS‑Easy’s VDI solution, leading the design of the first‑generation E‑VDI product for higher education.
+        </p>
+
+        <p>
+        Established the Solution Engineer team and later built the Marketing Department to support nationwide adoption.
+        </p>
+
+      
+
+        <div class="exp-subtitle">Achievements & Awards</div>
+
+        <div class="timeline">
+
+			<div class="timeline-item">
+				<div class="timeline-year">2014 <span class="timeline-icon">🛠</span></div>
+				<div class="timeline-text">Designed the first‑generation E‑VDI prototype</div>
+				<img src="image/2014-1.jpg" class="exp-img" alt="2014 E-VDI Prototype">
+				<img src="image/2014-2.jpg" class="exp-img" alt="2014 E-VDI Prototype">
+			</div>
+
+			<div class="timeline-item">
+				<div class="timeline-year">2015 <span class="timeline-icon">🏆</span></div>
+				<div class="timeline-text">Top 10 Education Cloud Solutions in China</div>
+				<img src="image/2015-1.jpg" class="exp-img" alt="2015 Top 10 Award">
+				
+			</div>
+
+			<div class="timeline-item">
+				<div class="timeline-year">2015 <span class="timeline-icon">🤝</span></div>
+				<div class="timeline-text">Intel Collaboration Excellence Award</div>
+				<img src="image/2015-2.jpg" class="exp-img" alt="2015 Intel Award">
+			</div>
+
+		</div>
+    </div>
+
+</div>
+
+
+<!-- ---------------- FOOTER ---------------- -->
+<hr class="footer-divider">
+
+<footer class="footer">
+  <div class="footer-item"><strong>Phone:</strong> 204‑399‑xxxx</div>
+  <div class="footer-item"><strong>Email:</strong> panrui9706@gmail.com</div>
+  <div class="footer-item">
+    <strong>Follow Me:</strong>
+    <a href="https://www.linkedin.com/in/rui-pan-07a63633b/" class="social-icon" target="_blank">
+      <img src="image/LinkedIn_icon.png" class="icon-img">
+    </a>
+    <a href="https://www.facebook.com/profile.php?id=61572253116786" class="social-icon" target="_blank">
+      <img src="image/Facebook-icon.jpg" class="icon-img">
+    </a>
+  </div>
+</footer>
+
+
+<!-- ---------------- TAB SCRIPT ---------------- -->
+<script>
+function openTab(tabName) {
+    document.querySelectorAll('.tab-button').forEach(btn => btn.classList.remove('active'));
+    document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
+
+    event.target.classList.add('active');
+    document.getElementById(tabName).classList.add('active');
+}
+</script>
+
+</body>
+</html>
