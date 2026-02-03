@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About | Rui Pan</title>
+
+<style>
+    body {
+        background-color: #f7f6f3;
+        margin: 0;
+        font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+    }
+
+    /* ---------------- HEADER ---------------- */
+    .top-nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        padding: 20px 40px;
+        background: #ffffff;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        box-sizing: border-box;
+        z-index: 1000;
+        border-bottom: 1px solid #eee;
+    }
+
+    .nav-left {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+    }
+
+    .nav-icon {
+        width: 16px;
+        height: 16px;
+        background-color: #f4c542;
+        border-radius: 50%;
+    }
+
+    .nav-text {
+        font-size: 16px;
+        font-weight: bold;
+        color: #222;
+    }
+
+    .nav-role {
+        font-weight: normal;
+        color: #666;
+        margin-left: 6px;
+    }
+
+    .nav-right {
+        list-style: none;
+        display: flex;
+        align-items: center;
+        gap: 0;
+        margin: 0;
+        padding: 0;
+    }
+
+    .nav-right li {
+        position: relative;
+        padding: 0 18px;
+    }
+
+    .nav-right li:not(:last-child)::after {
+        content: "";
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        height: 16px;
+        width: 1px;
+        background-color: #ccc;
+    }
+
+    .nav-right li a {
+        text-decoration: none;
+        font-size: 15px;
+        font-weight: bold;
+        color: #222;
+    }
+
+    .nav-right li a.active {
+        color: #1f4b8f;
+    }
+
+    /* ---------------- MAIN CONTAINER ---------------- */
+    .about-container {
+        padding: 40px 60px 30px;
+        max-width: 1100px;
+        margin: auto;
+        margin-top: 60px;
+        line-height: 1.7;
+        color: #333;
+    }
+
+    .about-title {
+        font-size: 2.2rem;
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+
+    .section-title {
+        font-size: 1.6rem;
+        font-weight: bold;
+        color: #1f4b8f;
+        margin-top: 30px;
+        margin-bottom: 15px;
+    }
+
+    /* ---------------- CARD ---------------- */
+    .card {
+        background: #ffffff;
+        padding: 25px 30px;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        margin-bottom: 25px;
+        transition: transform 0.25s ease;
+    }
+
+    .card:hover {
+        transform: translateY(-3px);
+    }
+
+    /* ---------------- FAQ GRID ---------------- */
+    .faq-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 25px;
+    }
+
+    .faq-question {
+        font-weight: bold;
+        margin-bottom: 8px;
+        color: #1f4b8f;
+    }
+
+    .faq-answer {
+        color: #444;
+    }
+
+    /* ---------------- FOOTER ---------------- */
+    .footer-divider {
+        border: none;
+        border-top: 1px solid #ccc;
+        margin: 60px auto 30px;
+        width: 90%;
+    }
+
+    .footer {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+        padding: 20px 100px;
+        background-color: #f7f6f3;
+        font-size: 0.95rem;
+        color: #444;
+        align-items: center;
+    }
+
+    .icon-img {
+        width: 24px;
+        height: 24px;
+        vertical-align: middle;
+        transition: opacity 0.3s ease;
+    }
+
+    .icon-img:hover {
+        opacity: 0.6;
+    }
+</style>
+</head>
+
+<body>
+
+<!-- ---------------- HEADER ---------------- -->
+<nav class="top-nav">
+    <div class="nav-left">
+        <div class="nav-icon"></div>
+        <div class="nav-text">
+            <a href="index.html" style="text-decoration: none;">Rui Pan</a>
+            <span class="nav-role">| IT Support</span>
+        </div>
+    </div>
+
+    <ul class="nav-right">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="resume.html">Resume</a></li>
+        <li><a href="experience.html">Experience</a></li>
+        <li><a href="skills.html">Skills</a></li>
+        <li><a class="active" href="about.html">About</a></li>
+    </ul>
+</nav>
+
+
+<!-- ---------------- ABOUT CONTENT ---------------- -->
+<div class="about-container">
+
+    <h1 class="about-title">About Me</h1>
+
+    <!-- ---------------- INTRODUCTION ---------------- -->
+    <div class="section-title">Introduction</div>
+
+    <div class="card">
+        <p>
+            Hello! My name is Rui Pan. I’m someone who enjoys learning, solving problems, and taking on new challenges. 
+            Over the years, I’ve worked in various IT‑related roles, which helped me develop strong analytical and 
+            problem‑solving abilities. I take pride in completing every task with responsibility and attention to detail.
+        </p>
+
+        <p>
+            Currently, I’m studying IT Network Administration at NBCC to strengthen my technical foundation and gain 
+            more hands‑on experience. I’m excited to apply what I’m learning in real‑world environments and continue 
+            growing in the IT field.
+        </p>
+    </div>
+
+
+    <!-- ---------------- FAQ SECTION ---------------- -->
+    <div class="section-title">Common Interview Questions</div>
+
+    <div class="faq-grid">
+
+        <!-- FAQ 1 -->
+        <div class="card">
+            <div class="faq-question">1. How could you describe yourself? / Could you tell us a little bit about yourself?</div>
+            <div class="faq-answer">
+                I would describe myself as a motivated, curious, and responsible person. I’ve always enjoyed learning new things, 
+                and that’s been a constant throughout my career. I spent many years working in different IT‑related roles, which 
+                helped me build strong problem‑solving skills and the ability to complete every task I take on.
+                <br><br>
+                Now I’m studying IT Network Administration at NBCC to deepen my technical skills and gain more hands‑on experience. 
+                I’m excited to apply what I’m learning in a real work environment and continue growing in the IT field.
+            </div>
+        </div>
+
+        <!-- FAQ 2 -->
+        <div class="card">
+            <div class="faq-question">2. Why do you want to work for us? Why are you applying for this job?</div>
+            <div class="faq-answer">
+                I’m applying because NB Power is a well‑respected organization in New Brunswick, and a summer position here is a 
+                great opportunity for a student like me. As an IT Network Administration student at NBCC, I want real hands‑on 
+                experience, and NB Power’s environment would help me learn while contributing to meaningful work. 
+                It’s an ideal place for me to grow my technical skills during the summer.
+            </div>
+        </div>
+
+        <!-- 你未来可以继续添加更多 FAQ 卡片 -->
+    </div>
+
+</div>
+
+
+<!-- ---------------- FOOTER ---------------- -->
+<hr class="footer-divider">
+
+<footer class="footer">
+  <div class="footer-item"><strong>Phone:</strong> 204‑399‑xxxx</div>
+  <div class="footer-item"><strong>Email:</strong> panrui9706@gmail.com</div>
+  <div class="footer-item">
+    <strong>Follow Me:</strong>
+    <a href="https://www.linkedin.com/in/rui-pan-07a63633b/" class="social-icon" target="_blank">
+      <img src="image/LinkedIn_icon.png" class="icon-img">
+    </a>
+    <a href="https://www.facebook.com/profile.php?id=61572253116786" class="social-icon" target="_blank">
+      <img src="image/Facebook-icon.jpg" class="icon-img">
+    </a>
+  </div>
+</footer>
+
+</body>
+</html>
