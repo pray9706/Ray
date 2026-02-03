@@ -189,6 +189,22 @@
 		max-width: 400px; /* 原始 650px 的约 2/3 */
 	}
 	
+	.edu-img {
+        width: 100%;
+        max-width: 600px;
+        border-radius: 12px;
+        margin: 15px 0;
+        box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+        transition: transform 0.3s ease;
+    }
+
+    .edu-img:hover {
+        transform: scale(1.02);
+    }
+	.small-img {
+		max-width: 400px; /* 原始 650px 的约 2/3 */
+	}
+	
 	.img-row {
 	  display: flex;
 	  gap: 20px; /* 图片之间的间距 */
@@ -299,6 +315,7 @@
     <div class="tab-buttons">
         <div class="tab-button active" onclick="openTab('ruijie')">2018–2024 Ruijie Network</div>
         <div class="tab-button" onclick="openTab('oseasy')">2013–2018 OS‑Easy Group</div>
+		<div class="tab-button" onclick="openTab('education')">Education Experience</div>
     </div>
 
     <!-- ---------------- Ruijie ---------------- -->
@@ -353,7 +370,7 @@
 				<div class="timeline-year">2022 <span class="timeline-icon">🏆</span><strong>Gold Award in Skills Competition</strong></div>
 				<div class="timeline-text">Gold Award in the Product & Business Development Manager Skills Competition, ranking first in the company-wide professional contest.</div>
 				<img src="image/2022-1.png" class="exp-img" alt="2022 Skills Competition Trophy">
-				
+				<img src="image/2022-2.png" class="exp-img" alt="2022 Skills Competition Trophy">
 			</div>
 
 		</div>
@@ -403,8 +420,82 @@
 		</div>
     </div>
 
-</div>
 
+
+<!-- ---------------- EDUCATION ---------------- -->
+	<div id="education" class="tab-content card">
+
+		<div class="exp-title">Education</div>
+
+		<!-- NBCC 部分 -->
+		<div class="exp-subtitle">NBCC – IT Network Administration (2024–Present)</div>
+		<p><strong>Diploma Program | Moncton Campus</strong></p>
+
+		<p>
+			Currently studying IT Network Administration at NBCC, focusing on hands‑on skills in networking, 
+			routing & switching, virtualization, cloud services, Linux administration, and IT support operations.
+			The program emphasizes practical labs, troubleshooting, and real‑world infrastructure design.
+		</p>
+
+		<p>
+			Coursework includes: Network Fundamentals, Routing & Switching, Windows Server Administration, 
+			Linux Systems, Virtualization, Cloud Technologies, Cybersecurity Essentials, and IT Service Management.
+		</p>
+
+		<div class="exp-subtitle">2025 Fall Term Transcript</div>
+
+		<!-- 成绩单图片（你上传后替换文件名即可） -->
+		<img src="image/2025-1.png" class="edu-img" alt="NBCC 2025 Fall Transcript">
+
+		<div class="exp-subtitle">Academic Timeline</div>
+
+		<div class="timeline">
+
+			<div class="timeline-item">
+				<div class="timeline-year">2025 Fall <span class="timeline-icon">🎓</span></div>
+				<div class="timeline-text">Enrolled in IT Network Administration at NBCC</div>
+			</div>
+
+			<div class="timeline-item">
+				<div class="timeline-year">2026 <span class="timeline-icon">📘</span></div>
+				<div class="timeline-text">Continuing Study, expected to graduate in May 2027.</div>
+			</div>
+
+		</div>
+
+
+		<!-- 早期教育部分 -->
+		<div class="exp-subtitle" style="margin-top:35px;">Earlier Education</div>
+
+		<div class="timeline">
+
+			<div class="timeline-item">
+				<div class="timeline-year">2006 <span class="timeline-icon">💻</span></div>
+				<div class="timeline-text">
+					Hubei Software Industry Training Centre — Diploma in Software Engineering
+				</div>
+				 <img src="image/2006-1.png" class="edu-img" alt="Diploma in Software Engineering">
+			</div>
+
+			<div class="timeline-item">
+				<div class="timeline-year">2004 <span class="timeline-icon">📡</span></div>
+				<div class="timeline-text">
+					Huazhong University of Science and Technology — Diploma in Communication Technology
+				</div>
+			</div>
+
+			<div class="timeline-item">
+				<div class="timeline-year">2001 <span class="timeline-icon">🔧</span></div>
+				<div class="timeline-text">
+					Hubei Post and Telecommunications School — Diploma in Telecommunications
+				</div>
+			</div>
+
+		</div>
+
+	</div>
+
+</div>
 
 <!-- ---------------- FOOTER ---------------- -->
 <hr class="footer-divider">
